@@ -1,10 +1,7 @@
 package com.springboottest.demo.mapper;
 
 import com.springboottest.demo.entity.User;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -22,11 +19,21 @@ public interface UserMapper {
     List<User> findAll();
 
     /**
-     *
+     * 插入新的用户
      * sql语句字段加飘
+     *
      * @param
      * @return
      */
     @Insert("insert into `user`(name,age,email) values(#{name},#{age} ,#{email})")
     int insert(User user);
+
+    /**
+     * 删除某用户，通过 id（key)
+     * @param user
+     * @return
+     */
+    @Delete("delete from `user`where id=#{id}")
+    int delete(User user);
+
 }

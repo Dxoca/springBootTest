@@ -1,10 +1,20 @@
 package com.springboottest.demo.entity;
 //实体 和数据库保持一致 数据库是啥实体就是啥
 public class User {
-    private Integer id;
+    private Integer id=-1;
     private String name;
     private Integer age;
     private String email;
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", email='" + email + '\'' +
+                '}';
+    }
 
     public User(Integer id, String name, Integer age, String email) {
         this.id = id;
