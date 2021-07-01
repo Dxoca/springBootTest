@@ -1,12 +1,12 @@
 package com.springboottest.demo.entity;
 //实体 和数据库保持一致 数据库是啥实体就是啥
 public class User {
-    private int id;
+    private Integer id;
     private String name;
-    private int age;
+    private Integer age;
     private String email;
 
-    public User(int id, String name, int age, String email) {
+    public User(Integer id, String name, Integer age, String email) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -17,7 +17,7 @@ public class User {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -33,7 +33,7 @@ public class User {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 

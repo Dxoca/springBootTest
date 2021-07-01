@@ -32,9 +32,9 @@ public class UserService {
      */
 
 //    @RequestMapping("/insert")
-    public int addUser(int id, String name, int age, String email)
+    public int addUser(User user)
     {
-        return userMapper.insert(id,name,age,email);
+        return userMapper.insert(user);
     }
 }
 

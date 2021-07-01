@@ -29,18 +29,18 @@ public class dataController {
      *
      * @return
      */
-    @RequestMapping("/user.json")
+    @GetMapping("/user")
     public List<User> getUser() {
         System.out.println("查询用户信息");
         return userService.findAll();
     }
 
 
-    @RequestMapping(path = "/insert")
-    public boolean insert(int id, String name, int age, String email) {
-        System.out.println("微信小程序调用接口 用户名: id: " + id + " name: " + name + " age: " + age + " email: " + email);
+    @PostMapping(path = "/insert")
+    public boolean insert(@RequestBody User user) {
+//        System.out.println("微信小程序调用接口 用户名: id: " + id + " name: " + name + " age: " + age + " email: " + email);
         //User user=new User(id, name, age, email)
-        int addUser = userService.addUser(id, name, age, email);
+        int addUser = userService.addUser(user);
         if (addUser == 1) {
             return true;
         }

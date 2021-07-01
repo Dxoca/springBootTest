@@ -22,11 +22,11 @@ public interface UserMapper {
     List<User> findAll();
 
     /**
+     *
+     * sql语句字段加飘
      * @param
      * @return
      */
-    @Insert("insert into user(id,name,age,email) values((#{id}, #{name},#{age} ,#{email})")
-    int insert(int id, String name, int age, String email);
-
-
+    @Insert("insert into `user`(name,age,email) values(#{name},#{age} ,#{email})")
+    int insert(User user);
 }
